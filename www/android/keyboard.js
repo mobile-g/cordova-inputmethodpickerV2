@@ -20,6 +20,10 @@ Keyboard.show = function() {
     exec(null, null, "Keyboard", "show", []);
 };
 
+Keyboard.picker = function() {
+    exec(null, null, "Keyboard", "picker", []);
+};
+
 Keyboard.disableScroll = function(disable) {
     exec(null, null, "Keyboard", "disableScroll", [disable]);
 };

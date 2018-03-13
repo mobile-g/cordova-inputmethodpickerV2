@@ -56,6 +56,15 @@ public class IonicKeyboard extends CordovaPlugin {
             });
             return true;
         }
+        if ("picker".equals(action)) {
+            cordova.getThreadPool().execute(new Runnable() {
+                public void run() {
+                    InputMethodManager inputManager = (InputMethodManager) cordova.getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    inputManager.showInputMethodPicker();
+                }
+            });
+            return true;
+        }
         if ("init".equals(action)) {
             cordova.getThreadPool().execute(new Runnable() {
                 public void run() {
